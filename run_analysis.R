@@ -102,7 +102,7 @@ names(Table_DF_select) <- gsub("angle", "Angle", names(Table_DF_select))
 
 
 # TASK 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-# use reshape2 package for this task
+# use reshape2 package for this task. Create a txt file containing the table "submission"
 
 library("reshape2")
 output <- melt(Table_DF_select, id.vars = c("Subject", "ActivityCode"))
