@@ -17,7 +17,7 @@ The code is split into a sequence of TASKS each with specific deliverable, here 
  - TASK 5: create a second tify dataset for subject- activity- measure- value
 
 
-## TASK 0: create a working directory where to store project data
+### TASK 0: create a working directory where to store project data
 ```
 if (!file.exists("data")) {
  dir.create("data")
@@ -34,7 +34,7 @@ dateDownloaded <- date()
 
 NB: Downloaded files are zipped, hence please make sure you MANUALLY extract the downloded zip folder to the "./data" directory, this will enable the following part of code to run properly.
 
-## TASK 1: Merges the training and the test sets to create one data set.
+### TASK 1: Merges the training and the test sets to create one data set.
 To do this first read the X data (both train and test) in R and rbind the two data tables into a single table "X" (this table expresses the measure derived from smartphones, there are 561 measures). Then remove the original split data tables to clear up memory space.
 ```
 X_test <- read.table("./UCI HAR Dataset/test/X_test.txt", quote = "")
@@ -83,7 +83,8 @@ Table <- cbind(subject, Y, X)
 Table_DF <- tbl_df(Table)
 rm("features", "subject", "Table", "X", "Y")
 ```
-## TASK 2: Extracts only the measurements on the mean and standard deviation for each measurement. This will narrow down the number of measure from 561 to 86.
+### TASK 2: Extracts only the measurements on the mean and standard deviation for each measurement. 
+This step will narrow down the number of measure from 561 to 86.
 There are invalid column names in the table: before selecting subsest of columns, must apply make.names func()
 ```
 valid_column_names <- make.names(names=names(Table_DF), unique=TRUE, allow_ = TRUE)
@@ -92,15 +93,16 @@ names(Table_DF) <- valid_column_names
 Table_DF_select <- select (Table_DF, Subject, ActivityCode, contains("mean"), contains("std"))
 rm("Table_DF")
 ```
-## TASK 3: Uses descriptive activity names to name the 6 activities in the data set, we use the "activity_label.txt" file provided to convert the levels of this factor from number to descriptive label.
+### TASK 3: Uses descriptive activity names to name the 6 activities in the data set.
+We use the "activity_label.txt" file provided to convert the levels of this factor from number to descriptive label.
 ```
 Table_DF_select$ActivityCode <- factor(Table_DF_select$ActivityCode, 
                                       levels = c(1, 2, 3, 4, 5, 6), 
                                       labels = c("WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING"))
 ```
 
-## TASK 4: Appropriately labels the data set with descriptive variable names. Repeatedly using the "gsub"function we first remove dots from column names and then replace abbreviations with full "self explanatory" names. 
-This will result in having the 86 measures renamed with (long) but descriptive names. 
+### TASK 4: Appropriately labels the data set with descriptive variable names. 
+Repeatedly using the "gsub"function we first remove dots from column names and then replace abbreviations with full "self explanatory" names. This will result in having the 86 measures renamed with (long) but descriptive names. 
 ```
 names(Table_DF_select) <- gsub("\\.", "", names(Table_DF_select)) 
 names(Table_DF_select) <- gsub("Acc", "Acceleration", names(Table_DF_select)) 
@@ -127,10 +129,24 @@ names(final) <- c("Subject", "Activity", "Measure", "Measure Mean")
 write.table(final, file = "submission.txt", row.names = FALSE)
 ```
 ***
-# APPENDIX: list of variable and respective decriptions:
-# variable names have been processed in R to provide be self-explanatory, nonetheless, here below a list of all variable you will find in the final Tidy data set.
+## APPENDIX: list of variable and respective decriptions:
 
-| # | "Measure"
+For Each of the 30 Subjects (identified by a number from 1 to 30) 86 measures are tracked when performing 6 physical activities, all measures shown in the final table are mean values. 
+
+Variable names have been processed in R to provide be self-explanatory, nonetheless, here below a list of all variable you will find in the final Tidy data set.
+
+| count | Activity
+---- | ----
+1 | WALKING
+2 | WALKING_UPSTAIRS
+3 | WALKING_DOWNSTAIRS
+4 | SITTING
+5 | STANDING
+6 | LAYING
+
+***
+
+| count | "Measure"
 ----- | ------
 1 | "TimeBodyAccelerationMeanX"
 2 | "TimeBodyAccelerationMeanY"
