@@ -126,6 +126,6 @@ final <- output %>% group_by(Subject, ActivityCode, variable) %>% summarize(mean
 names(final) <- c("Subject", "Activity", "Measure", "Measure Mean")
 write.table(final, file = "submission.txt", row.names = FALSE)
 ```
-
-## list of variable and respective decriptions:
-## variable names have been processed in R to provide be self-explanatory, nonetheless, here below a list of all variable you will find in the final Tidy data set (.
+***
+# APPENDIX: list of variable and respective decriptions:
+# variable names have been processed in R to provide be self-explanatory, nonetheless, here below a list of all variable you will find in the final Tidy data set.
