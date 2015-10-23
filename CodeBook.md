@@ -9,12 +9,12 @@ output: html_document
 *Blocks of code with explanations and list of variables*
 
 The code is split into a sequence of TASKS each with specific deliverable, here the list:
--TASK 0: donwload file, create and set working directory
--TASK 1: merge datasets
--TASK 2: extracts only mean and std measures
--TASK 3: use descriptive names for acitivties
--TASK 4: use descriptive variable names
--TASK 5: create a second tify dataset for subject- activity- measure- value
+ - TASK 0: donwload file, create and set working directory
+ - TASK 1: merge datasets
+ - TASK 2: extracts only mean and std measures
+ - TASK 3: use descriptive names for acitivties
+ - TASK 4: use descriptive variable names
+ - TASK 5: create a second tify dataset for subject- activity- measure- value
 
 
 ## TASK 0: create a working directory where to store project data
