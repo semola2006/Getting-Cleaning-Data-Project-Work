@@ -1,11 +1,10 @@
-# Getting-Cleaning-Data-Project-Work
+## Getting-Cleaning-Data-Project-Work
 Repository for Code, Readme and Code book that complete the Project Work for Coursera 
 
-=======================================================
-Project Work - Getting and Cleaning data online Course
-Author: Alberto Pellegata
-email:alberto.pellegata@gmail.com
-=======================================================
+Author: Alberto Pellegata, email:alberto.pellegata@gmail.com
+
+
+# Preambule and sources:
 
 The data used for this project represents data collected from the accelerometers from the Samsung Galaxy S smartphone. 
 A full description is available at the site where the data was obtained: 
@@ -15,7 +14,9 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 datasets were dowloaded from this address:
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-======================================================
+
+# Project deliverables and high level description:
+
 Starting from the data downloaded the project aimed at achieving the following:
 1) create a tidy data set, 
 2) a link to a Github repository with your script for performing the analysis, and 
