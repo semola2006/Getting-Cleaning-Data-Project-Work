@@ -18,9 +18,9 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 ## Project deliverables and high level description:
 
 Starting from the data downloaded the project aimed at achieving the following:
-1) create a tidy data set, 
-2) a link to a Github repository with your script for performing the analysis, and 
-3) a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md
+  1. create a tidy data set, 
+  2. a link to a Github repository with your script for performing the analysis, and 
+  3. a code book that describes the variables, the data, and any transformations or work that you performed to clean up the   data called CodeBook.md
 
 Data available for the project consists basically of measures captured by the smartphone's accelerometer of 30 different subjects while performing a range of activity 
 (walking, walking upstairs, sitting, etc..). you can find the full list of activities along with a description of the measures in the Code book.
